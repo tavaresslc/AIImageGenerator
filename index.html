@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Definição do conjunto de caracteres para suporte internacional -->
+    <meta charset="UTF-8">
+    
+    <!-- Configuração para ajustar a exibição em dispositivos de diferentes tamanhos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Inclusão de um arquivo de estilo externo para melhorar o design da página -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Título exibido na aba do navegador -->
+    <title>IA Geradora de Imagens</title>
+</head>
+<body>
+    <!-- Div que contém todo o conteúdo da página -->
+    <div class="container">
+        <!-- Título principal da aplicação -->
+        <h1>IA Geradora de Imagens</h1>
+        
+        <!-- Descrição do funcionamento da IA para gerar imagens -->
+        <p>Exemplo: "Por favor, gere uma imagem de uma paisagem urbana futurista à noite, com prédios altos iluminados por luzes neon. Inclua carros voadores no céu e reflexos brilhantes no chão molhado. Tente capturar uma atmosfera de modernidade e tecnologia avançada."</p>
+        
+        <!-- Formulário para enviar o prompt à IA -->
+        <form class="gen-form">
+            <!-- Campo de entrada de texto onde o usuário insere seu prompt -->
+            <input type="text" id="user-prompt" placeholder="Digite seu prompt aqui..." autocomplete="off">
+            
+            <!-- Botão para acionar a geração de imagem -->
+            <button class="button" id="generate">Gerar</button>
+        </form>
+        
+        <!-- Div que exibirá o resultado (imagem gerada) -->
+        <div class="result">
+            <!-- Mensagem temporária de "Gerando..." enquanto a imagem está sendo processada -->
+            <div id="loading">Gerando...</div>
+            
+            <!-- Div onde a imagem gerada será exibida -->
+            <div id="image-grid"></div>
+        </div>
+    </div>
+    
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

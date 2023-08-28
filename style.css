@@ -1,0 +1,196 @@
+/* Importação da fonte Roboto da Google Fonts com diferentes pesos */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Reset de margens, paddings e box-sizing para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização básica para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #451a70;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Estilização do contêiner principal da aplicação */
+.container {
+    position: relative;
+    max-width: 40rem;
+    color: #fff;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Elementos de fundo com efeito de desfoque */
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    filter: blur(140px);
+    z-index: -1000;
+}
+
+/* Estilização para o título principal */
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Estilização para o texto descritivo */
+p {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.4rem;
+    text-align: justify;
+}
+
+/* Estilização do formulário de geração de imagens */
+.gen-form {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Estilização do campo de entrada de texto */
+input {
+    width: 80%;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #999;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de realce no campo de entrada de texto */
+input:hover, input:focus {
+    border-color: #fff;
+}
+
+/* Estilização do botão de geração */
+button {
+    width: 20%;
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: #fff;
+    background: #007575;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de realce no botão de geração ao passar o mouse */
+button:hover {
+    background: #008080;
+    border-color: transparent;
+}
+
+/* Estilização da mensagem de carregamento */
+#loading {
+    display: none;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Estilização para o botão desativado */
+button:disabled, button[disabled] {
+    background-color: #ccc;
+    cursor: auto;
+    border: 1px solid #999;
+    color: #666;
+}
+
+/* Estilização para o resultado (grid de imagens) */
+.result {
+    margin-top: 10px;
+    padding: 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilização para a grid de imagens */
+#image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 10px;
+    gap: 10px;
+    max-width: 80%;
+}
+
+/* Estilização para as imagens na grid */
+#image-grid img {
+    max-width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de realce na imagem ao passar o mouse */
+#image-grid img:hover {
+    border-color: #009999;
+}
+
+/* Estilos para telas menores (até 768px) */
+@media screen and (max-width: 768px) {
+    /* Ajuste do contêiner e elementos de fundo para telas menores */
+    .container, .container::before, .container::after {
+        border-radius: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+    .container::before {
+        left: -10%;
+        top: -20%;
+    }
+    .container::after {
+        right: -10%;
+        bottom: -20%;
+    }
+    /* Ajuste do tamanho da fonte para telas menores */
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 18px;
+    }
+    /* Ajuste do layout do formulário para empilhamento em telas menores */
+    .gen-form {
+        flex-direction: column;
+    }
+    /* Ajuste do campo de entrada de texto e do botão para telas menores */
+    input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px 10px;
+    }
+    button {
+        width: 100%;
+        font-size: 1rem;
+    }
+    /* Ajuste da grid de imagens para uma coluna em telas menores */
+    #image-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
